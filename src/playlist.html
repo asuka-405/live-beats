@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script src="./components/player/player.js" defer></script>
+    <script type="module" src="./script/search.js"></script>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <style>
+      body {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-bar">
+      <span class="title">Live Beats</span>
+      <span class="subtitle">Music Player</span>
+      <span class="title-bar-btn exit-btn">x</span>
+    </div>
+
+    <div class="searchbox">
+      <input type="text" id="search-yt" />
+      <button id="search-button">Search</button>
+    </div>
+
+    <div class="playlist">
+      <div class="item">
+        <div class="name">Song Name</div>
+        <div class="duration">00:00</div>
+        <div class="buttons">
+          <span class="play-music"><img src="images/play.svg" alt="" /></span>
+        </div>
+      </div>
+    </div>
+
+    <span class="ai" id="ai-btn"></span>
+
+    <mu-player></mu-player>
+  </body>
+  <script defer>
+    const aiBtn = document.querySelector("#ai-btn")
+    aiBtn.addEventListener("click", () => {
+      window.location = `./ai.html`
+    })
+  </script>
+</html>

@@ -1,0 +1,152 @@
+static char *wx_window_media_pp_res = "dialog(name = 'wx_window_media_pp_res',\
+  style = 'wxRAISED_BORDER | wxCAPTION | wxSYSTEM_MENU',\
+  title = 'Window Properties',\
+  id = 6001,\
+  x = 10, y = 10, width = 215, height = 239,\
+  background_colour = 'D4D0C8',\
+  use_dialog_units = 1,\
+  use_system_defaults = 0,\
+  font = [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg'],\
+  control = [6002, wxTextCtrl, '11', '0', 'page_height', 8, 22, 84, 15, '11',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6003, wxTextCtrl, '8.5', '0', 'page_width', 8, 48, 84, 14, '8.5',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6004, wxStaticText, 'Page Height (in)', '0', 'Page Height (in)', 16, 9, 53, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6005, wxStaticText, 'Page Width (in)', '0', 'statictext2', 29, 40, 54, 9, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6006, wxTextCtrl, '1.0', '0', 'yscale', 104, 23, 104, 15, '1.0',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6007, wxTextCtrl, '0.8', '0', 'xscale', 104, 47, 104, 15, '0.8',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6008, wxStaticText, 'Y Scale (View Only)', '0', 'statictext5', 120, 13, 53, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6009, wxStaticText, 'X Scale (View Only)', '0', 'statictext6', 116, 39, 53, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6017, wxButton, 'OK', '0', 'pp_ok', 48, 222, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6018, wxButton, 'Cancel', 'wxBORDER | wxSIMPLE_BORDER', 'pp_cancel', 116, 221, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6039, wxStaticText, 'Top Margin', '0', 'statictext1', 36, 67, 40, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6040, wxStaticText, 'Bottom Margin', '0', 'statictext2', 124, 94, 40, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6041, wxTextCtrl, '', '0', 'top_margin', 9, 77, 84, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6042, wxTextCtrl, '', '0', 'bottom_margin', 104, 102, 104, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6043, wxStaticText, 'Left Margin', '0', 'statictext5', 36, 91, 48, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6044, wxStaticText, 'Right Margin', '0', 'statictext6', 124, 116, 48, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6045, wxTextCtrl, '', '0', 'left_margin', 8, 101, 84, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6046, wxTextCtrl, '', '0', 'right_margin', 104, 124, 104, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6047, wxStaticText, 'Title Size', '0', 'statictext9', 29, 116, 44, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6048, wxStaticText, 'Copyright Size', '0', 'statictext10', 120, 139, 56, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6049, wxTextCtrl, '', '0', 'title_size', 8, 125, 84, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6050, wxTextCtrl, '', '0', 'copyright_size', 104, 150, 104, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6051, wxStaticText, 'Word Size', '0', 'statictext13', 37, 140, 28, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6052, wxTextCtrl, '', '0', 'word_size', 8, 150, 84, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6053, wxCheckBox, 'Bold Chords', '0', 'bold_chords_box', 14, 192, 52, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6054, wxCheckBox, 'Italic Chords', '0', 'italic_chords_box', 68, 192, 64, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6055, wxCheckBox, 'Italic Songwords', '0', 'italic_songwords_box', 120, 192, 68, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6056, wxTextCtrl, '', '0', 'chord_size', 104, 172, 104, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6057, wxStaticText, 'Chord Size', '0', 'statictext2', 132, 163, 44, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6058, wxTextCtrl, '', '0', 'songword_size', 9, 172, 84, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6060, wxStaticText, 'Songword Size', '0', 'statictext5', 16, 164, 60, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6061, wxTextCtrl, '', '0', 'note_scale', 104, 77, 104, 14, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6062, wxStaticText, 'Note Scale', '0', 'statictext2', 132, 68, 54, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']]).";
+
+static char *wx_abc_options = "dialog(name = 'wx_abc_options',\
+  style = 'wxRAISED_BORDER | wxCAPTION | wxSYSTEM_MENU',\
+  title = 'ABC Options',\
+  id = 6019,\
+  x = 10, y = 10, width = 244, height = 74,\
+  background_colour = 'D4D0C8',\
+  use_dialog_units = 1,\
+  use_system_defaults = 0,\
+  font = [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg'],\
+  control = [6020, wxStaticText, 'Allow V: with no brackets', '0', 'statictext2', 40, 16, 68, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6021, wxStaticText, 'Allow V: with text voice numbers', '0', 'statictext3', 29, 29, 86, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6022, wxStaticText, 'Allow non-standard program assignments', '0', 'statictext4', 4, 42, 120, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6023, wxCheckBox, '(Barfly)', '0', 'v_no_brackets', 128, 18, 38, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6024, wxCheckBox, '', '0', 'v_text_numbers', 128, 30, 38, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6025, wxCheckBox, '(Barfly)', '0', 'v_barfly_compatibility', 128, 43, 38, 6, 0,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6026, wxStaticText, 'Static', '0', 'statictext1', 36, 87, 15, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6017, wxButton, 'OK', '0', 'button1', 72, 57, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6018, wxButton, 'Cancel', '0', 'button2', 136, 57, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']]).";
+
+static char *wx_percentage_dialog_res = "dialog(name = 'wx_percentage_dialog_res',\
+  style = 'wxRAISED_BORDER | wxCAPTION | wxSYSTEM_MENU',\
+  title = 'Progress',\
+  id = 100,\
+  x = 10, y = 10, width = 200, height = 60,\
+  background_colour = 'D4D0C8',\
+  use_dialog_units = 1,\
+  use_system_defaults = 0,\
+  font = [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg'],\
+  control = [101, wxGauge, '', 'wxGA_HORIZONTAL', 'gauge2', 36, 18, 132, 18, 0, 10,\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [104, wxButton, 'Cancel', '0', 'cancel_button', 76, 44, 41, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [105, wxStaticText, 'Static', '0', 'percent_label', 88, 24, 15, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [106, wxStaticText, 'Static', '0', 'caption', 89, 5, 15, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']]).";
+
+static char *wx_midi_options = "dialog(name = 'wx_midi_options',\
+  style = 'wxRAISED_BORDER | wxCAPTION | wxSYSTEM_MENU',\
+  title = 'MIDI Options',\
+  id = 6030,\
+  x = 10, y = 10, width = 164, height = 90,\
+  background_colour = 'D4D0C8',\
+  use_dialog_units = 1,\
+  use_system_defaults = 0,\
+  font = [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg'],\
+  control = [6031, wxTextCtrl, '', '0', 'midi_player', 56, 9, 68, 12, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6032, wxStaticText, 'MIDI Player', '0', 'statictext5', 6, 10, 40, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6033, wxButton, '...', '0', 'choose_midi_player', 132, 8, 22, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6034, wxTextCtrl, '', '0', 'midi_player_command', 65, 29, 75, 12, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6035, wxStaticText, 'Invoke Player Like', '0', 'statictext8', 6, 30, 60, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6036, wxStaticText, 'MIDI Directory', '0', 'statictext9', 5, 50, 41, 6, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6037, wxTextCtrl, '', '0', 'midi_directory', 57, 49, 68, 12, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6038, wxButton, '...', '0', 'choose_midi_directory', 132, 49, 22, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6017, wxButton, 'OK', '0', 'pp_ok', 33, 71, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']],\
+  control = [6018, wxButton, 'Cancel', '0', 'pp_cancel', 90, 71, 42, 11, '',\
+      [8, 'wxSWISS', 'wxNORMAL', 'wxNORMAL', 0, 'MS Shell Dlg']]).";
+

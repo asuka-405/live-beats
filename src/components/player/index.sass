@@ -1,0 +1,202 @@
+@import "./partials/reset"
+$dim_mu-cover: 150px
+$c_bg: #241f31
+$c_fg: whitesmoke
+$c_accent: coral
+
+$mu_disk-color: $c_fg
+$mu_player-border: $c_fg
+$mu_player-bg: $c_bg
+$mu_player-fg: $c_fg
+$mu_player-accent: coral
+
+$mu_seek-bg: $c_fg
+$mu_seek-fg: coral
+
+body
+    background: $c_bg
+    color: $c_fg
+    height: 100vh
+
+// mu-player has highest z-index
+// any number with 6 digits or less will do to make sure it's on top
+
+$player-width: 270px
+
+.mu-player
+    position: relative
+    z-index: 1000000
+
+    width: $player-width
+    height: 100px
+
+    color: $mu_player-fg
+
+    .mu-fg
+        position: absolute
+        width: 100%
+        height: 100%
+        padding: 1em
+        background: $mu_player-bg
+        border-radius: 10px
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+        border: 2px solid $mu_player-border
+        z-index: 2222222
+
+.mu-cover
+    position: absolute
+    z-index: 1111111
+    top: calc( $dim_mu-cover * -0.35)
+    left: calc( $dim_mu-cover * 0.1)
+    transition: top 0.5s ease
+    width: $dim_mu-cover
+    height: $dim_mu-cover
+    border-radius: 50%
+    overflow: hidden
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+    animation: spin 10s linear infinite
+    animation-play-state: paused
+    border: 5px solid $mu_disk-color
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.5)
+    &::after
+        content: ""
+        position: absolute
+        width: calc( $dim_mu-cover * 0.1 )
+        height: calc( $dim_mu-cover * 0.1 )
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: rgba(0, 0, 0)
+        border-radius: 50%
+        border: 2px solid $mu_disk-color
+
+.spin-cover
+    top: calc( $dim_mu-cover * -0.55)
+    animation-play-state: running
+    &::before
+        background: rgba(0, 0, 0, 0)
+
+.mu-meta
+    overflow: hidden
+    .mu-title
+        font-size: 1.2em
+        font-weight: bold
+        color: $mu_player-fg
+        margin: 0
+        width: fit-content
+        white-space: nowrap
+        overflow-x: auto
+        animation: marquee 10s linear infinite
+    .mu-artist
+        font-size: 0.7em
+        color: $mu_player-accent
+        margin: 0
+        margin-bottom: 2em
+    .mu-time
+        font-size: 0.8em
+        color: $mu_player-fg
+        margin: 0
+        position: absolute
+        bottom: 0.75em
+        left: 1em
+
+.mu-buttons
+    position: absolute
+    right: 1em
+    bottom: 0.5em
+
+    button
+        width: 30px
+        aspect-ratio: 1/1
+        scale: 0.6
+.mu-seek
+    position: absolute
+    bottom: -2em
+    left: 0
+    width: 100%
+    height: 20px
+
+.mu-seek input
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    width: 100%
+    height: 10px
+    background-color: $mu_seek-bg
+    border-radius: 5px
+    outline: none
+    position: relative
+    z-index: 9999999
+
+    &::-webkit-slider-runnable-track
+        width: 100%
+        height: 10px
+        background-color: transparent
+
+    &::-moz-range-track
+        width: 100%
+        height: 10px
+        background-color: transparent
+
+    &::-webkit-slider-thumb
+        -webkit-appearance: none
+        -moz-appearance: none
+        appearance: none
+        width: 10px
+        height: 10px
+        background-color: transparent
+        border-radius: 50%
+        position: relative
+        z-index: 2
+
+    &::-moz-range-thumb
+        -webkit-appearance: none
+        -moz-appearance: none
+        appearance: none
+        width: 0
+        height: 0
+        border: none
+        background-color: transparent
+
+#mu-seeked
+    content: ""
+    position: absolute
+    width: 0%
+    height: 10px
+    background-color: $mu_seek-fg
+    border-radius: 5px
+    top: 0.25em
+    left: 0
+    z-index: 99999991
+
+.mu-stick-bottom
+    position: fixed
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 2.2em
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+@keyframes marquee
+    0%
+        transform: translateX(0%)
+    60%
+        transform: translateX(-100%)
+    60.01%
+        transform: translateX($player-width)
+    100%
+        transform: translateX(0%)

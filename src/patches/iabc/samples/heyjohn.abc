@@ -1,0 +1,82 @@
+% iabc (C) Aaron Newman 2004
+X:1
+T:Hey John
+Q:1/4=144
+K:C
+P:A
+% quick 4-bar intro.  Chords in horns, followed by
+% melody in trumpet   
+V:1 nm=alto1 snm=alto1
+.D2 zE-E4|.D2 zE-E4|.D2 zE-E3 .F|z6 _E2|
+V:2 nm=alto2 snm=alto2
+.C2 zD-D4|.C2 zD-D4|.C2 zD-D3 .G|z6 _E2|
+V:3 nm=tenor1 snm=tenor1
+.D2 zE-E4|.D2 zE-E4|.D2 zE-E3 .F|z6 _E2|
+V:4  nm=tpt1 snm=trumpet1
+z8|z8|z8|z8|
+V:5 cleff=bass octave=-2
+z8|z8|z8|z8|
+V:6 cleff=treble
+z8|z8|z8|z8|
+
+% First statement of the melody, in sax follwed by
+% b phrase in trumpet
+P:B
+V:1
+E2 z2 c4-|c6     E2|F2 zd- d4-| d4 z2 (3G/A/G/ ^F|
+G2 z2 e4|(3z2e2d2 (3c2B2_B2| G2 z2 z2 _A2-|_A8|
+z8|z8|zc3 A4|F4 E4|
+
+
+V:2
+E2 z2 c4-|c6     E2|F2 zd- d4-| d4 z2 (3G/A/G/ ^F|
+G2 z2 e4|(3z2e2d2 (3c2B2_B2| G2 z2 z2 _E2-|_E8|
+z8|z8|zC3 ^C4|D4 B4|
+
+V:3
+E2 z2 c4-|c6     E2|F2 zd- d4-| d4 z2 (3G/A/G/ ^F|
+G2 z2 e4|(3z2e2d2 (3c2B2_B2 |A2 z2 z2 F2- |F8|
+z8|z8|zA3 G4|c4 B4|
+
+V:4
+z8|z8|z8|z8|
+z8|z8|z8|z8|
+GC .C2 C3F|GC .C2 C2 DF-|F8-|F6z2|
+g2 cc cccg- |gc cc- cc c2|g_g fa _ef dB|z8|
+
+% counterpoint to first melody in the trombone.
+V:5
+z6 _E2|E2 z2 c4|z4 zE FE|F2 zd- dz z2|
+z2 (3g/a/g/ ^f ez d'2|(3z2e'2d'2 (3c'2b2_b2|a2 z4 f2-|f8|
+GC .C2 C3F|GC .C2 C2 DF-|F8-|F6z2|
+z8|z8|z8|z8|
+
+V:6
+z8|z8|z8|z8|
+z8|z8|z8|z8|
+z8|z8|z8|z8|
+e2 AA AAAe- |eA AA- AA A2|ee df cd BG|z8|
+
+V:1
+z8|z8|z8|z6 ^D2|
+V:2
+z8|z8|z8|z8|
+V:3
+z8|z8|z8|z8|
+
+P:C
+V:1
+E2 z2 c4-|c6     E2|F2 zd- d4-| d4 z2 (3G/A/G/ ^F|
+G2 z2 e4|(3z2e2d2 (3c2B2_B2| A2 z2 z2 g2-|g8|
+
+V:2
+z8|z8|z8|z8|
+z8|z8|z8|z8|
+V:3
+zc B2 A2 G2|_G2 F2 EF- Fz|zd c2 c2 _B2 |_B2 A2 ^GA- Az|
+ze d2 c2 BG|(3z2g2f2 (3e2d2e2|f2 z2 z2 f2-|f8|
+
+V:4
+zc B2 A2 G2|_G2 F2 EF- Fz|zd c2 c2 _B2 |_B2 A2 ^GA- Az|
+ze d2 c2 BG|(3z2g2f2 (3e2d2c2|B2 z2 z2 B2-|B8|
+

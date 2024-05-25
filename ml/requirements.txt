@@ -1,0 +1,7 @@
+# keras==2.11.0
+# midi2audio==0.1.1
+# music21==8.1.0ppp
+# tensorflow==2.11.0
+keras
+music21
+tensorflow

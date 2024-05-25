@@ -1,0 +1,48 @@
+<div class="mu-player mu-stick-bottom">
+  <div id="mu-cover" class="mu-cover">
+    <slot name="cover">
+      <img src="images/musical0.jpg" alt="" />
+    </slot>
+  </div>
+  <div class="mu-fg">
+    <div class="mu-meta">
+      <h3 id="mu-title" class="mu-title">
+        <slot name="title"></slot>
+      </h3>
+      <h4 id="mu-artist" class="mu-artist">
+        <slot name="artist"></slot>
+      </h4>
+      <h5 class="mu-time" id="mu-time">0:0 / 0:0</h5>
+    </div>
+    <div class="mu-controls">
+      <div class="mu-progress">
+        <div class="mu-progress-bar"></div>
+      </div>
+      <div class="mu-buttons">
+        <button id="mu-previous">
+          <img src="images/previous.svg" alt="<<" />
+        </button>
+        <button id="mu-play-pause">
+          <img src="images/play.svg" alt=">" />
+        </button>
+        <button id="mu-stop">
+          <img src="images/stop.svg" alt="II" />
+        </button>
+        <button id="mu-next">
+          <img src="images/next.svg" alt=">>" />
+        </button>
+      </div>
+    </div>
+    <div class="mu-seek" id="mu-seek">
+      <input type="range" class="mu-seek-bar" value="0" />
+      <span id="mu-seeked"></span>
+    </div>
+  </div>
+  <audio id="mu-audio" class="mu-audio">
+    <source
+      src="https://www.bensound.com/bensound-music/bensound-betterdays.mp3"
+      type="audio/mpeg"
+    />
+    your browser does not support the audio element.
+  </audio>
+</div>

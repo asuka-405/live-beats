@@ -1,0 +1,94 @@
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 5px 5px;
+  color: $candy_floss-light;
+
+  .item {
+    border-top: 3px solid $lavender_whip;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7fr 2fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 0.25em 0.5em;
+
+    transition: all 0s ease-in-out;
+
+    .buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      img {
+        margin-top: 5px;
+        padding: 3px;
+        padding-left: 5px;
+        width: 27px;
+        background-color: $lavender_whip-dark;
+        border-radius: 50%;
+        &:hover {
+          cursor: pointer;
+          filter: invert(1);
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $candy_floss-light;
+      color: $matte_black;
+    }
+  }
+}
+
+.searchbox {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
+  margin-top: 1em;
+  max-width: 80%;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.5);
+  color: $candy_floss-light;
+  border-radius: 5px 5px 0 0;
+  input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.3rem;
+    background: $candy_floss-light;
+    color: $matte_black;
+    border: none;
+    border-radius: 0.5em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  button {
+    padding: 0.5em;
+    font-size: 1.3rem;
+    background: $candy_floss-light;
+    color: $matte_black;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+}
+
+.spacer {
+  width: 100%;
+  height: 10px;
+  &--200 {
+    height: 150px;
+  }
+}

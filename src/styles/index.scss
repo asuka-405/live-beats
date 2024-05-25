@@ -1,0 +1,217 @@
+@import "colors";
+@import "typography";
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: font2;
+  transition: all 0.5s ease;
+  outline-color: $accent;
+  scroll-behavior: smooth;
+  letter-spacing: 2px;
+
+  /* Styles for the custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+
+  /* Track (background) of the scrollbar */
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Color of the track */
+  }
+
+  /* Handle (thumb) of the scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background: $accent; /* Color of the handle */
+    border-radius: 5px; /* Rounded corners of the handle */
+  }
+
+  /* When hovering over the scrollbar */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($accent, 10%); /* Darken the handle color on hover */
+  }
+
+  /* When the scrollbar is in its active state */
+  ::-webkit-scrollbar-thumb:active {
+    background: darken($accent, 20%); /* Darken the handle color when active */
+  }
+}
+
+@import "partials/playlist";
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient($candy_floss-light, $lavender_whip);
+  color: $matte_black;
+}
+
+body:nth-child(2) {
+  margin-top: 55px;
+}
+
+#main {
+  overflow-y: scroll;
+  height: 100vh;
+  // scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  & > * {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2.5rem;
+
+  &:first-of-type h1 {
+    font-family: scriptina;
+    font-size: 6rem;
+    mix-blend-mode: multiply;
+    letter-spacing: 20px;
+  }
+}
+
+.ai,
+.music,
+.generate {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: 3px solid $lavender_whip;
+  background: $lavender_whip-dark;
+  background-image: url("../images/ai.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2em;
+
+  cursor: pointer;
+  z-index: 100;
+  transform: scale(1.5);
+  &:hover {
+    transform: scale(1.55);
+  }
+}
+
+.generate {
+  bottom: unset;
+  right: unset;
+  margin: 0 auto;
+  transform: scale(1.5);
+  &:hover {
+    transform: scale(2);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.music {
+  background-image: url("../images/music.svg");
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(-10%);
+  &--active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#start-btn {
+  color: $lavender_whip-dark;
+  font-size: 4rem;
+  cursor: pointer;
+  &:focus {
+    outline: 3px solid $accent;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveform {
+  border-radius: 50%;
+  background-color: $matte_black;
+  height: 28vh;
+  width: 28vh;
+  overflow: hidden;
+  transform: scale(2);
+  &-svg {
+    width: 40vh;
+    height: 40vh;
+    transform: translateX(-15%) translateY(-15%);
+    visibility: hidden;
+    z-index: 999999;
+  }
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 1em;
+  background: $lavender_whip-dark;
+  color: $matte_black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  z-index: 999999999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  -webkit-app-region: drag;
+  &-btn {
+    -webkit-app-region: no-drag;
+    background: $lavender_whip;
+    color: $matte_black;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+    &:hover {
+      background: $candy_floss-light;
+      color: $matte_black;
+    }
+  }
+}

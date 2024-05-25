@@ -1,0 +1,42 @@
+{
+  "name": "live_beats",
+  "productName": "live_beats",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.2.0",
+    "@electron/fuses": "^1.7.0",
+    "electron": "29.0.1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "suryansh kapil",
+    "email": "suryanshkapil405+git@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "abcjs": "^6.3.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "lamejs": "^1.2.1",
+    "midi-parser-js": "^4.0.4",
+    "music-metadata": "^7.14.0",
+    "yt-search": "^2.11.0",
+    "ytdl-core": "^4.11.5"
+  }
+}

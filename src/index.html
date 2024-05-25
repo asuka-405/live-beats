@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script type="module" src="./script/worker.js" defer></script>
+    <title></title>
+    <script type="module" defer>
+      import { animate } from "./script/helper/animate.js"
+
+      animate("slide-in", "slide-in--active")
+    </script>
+  </head>
+  <body>
+    <div class="title-bar">
+      <span class="title">Live Beats</span>
+      <span class="subtitle">Welcome</span>
+      <span class="title-bar-btn exit-btn">x</span>
+    </div>
+
+    <div id="main">
+      <section class="hero-section">
+        <h1 class="slide-in">LiveBeats</h1>
+      </section>
+      <section>
+        <h2>Create your own music with AI!!</h2>
+      </section>
+      <section>
+        <h2 class="slide-in">Search and play music online.</h2>
+      </section>
+      <section>
+        <a href="./playlist.html" id="start-btn">Start!</a>
+      </section>
+    </div>
+  </body>
+</html>

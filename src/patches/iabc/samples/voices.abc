@@ -1,0 +1,23 @@
+% iabc (C) Aaron Newman 2002
+X:1
+T:My New Tune
+K:Bb
+L:1/4
+V:1 cleff=treble 
+A|
+A|
+V:2 cleff=treble
+B|
+B|
+V:3 cleff=treble
+C|
+C|
+V:1
+A|
+A|
+V:2
+B|
+B|
+V:3
+C|
+C|
