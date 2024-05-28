@@ -7,7 +7,13 @@ import os from "os"
 import path from "path"
 import yts from "yt-search"
 import ytdl from "ytdl-core"
-import { __dirname, audioExtName, config, saveConfig } from "./variables.js"
+import {
+  __dirname,
+  audioExtName,
+  config,
+  getPlayerJS,
+  saveConfig,
+} from "./variables.js"
 if (startup) app.quit()
 
 let win = null
@@ -34,91 +40,7 @@ ipcMain.handle("ai-gen", async () => {
   win.loadURL("https://notabc.app/abc-converter/")
   win.webContents.on("did-finish-load", async () => {
     await win.webContents
-      .executeJavaScript(
-        `
-// Hide navigation and other elements
-document.querySelector('nav').style.display = 'none';
-document.querySelectorAll(".col-md-3.offset-md-1.col-sm-12.mb-4, h1, p").forEach(e => e.style.display = 'none');
-
-// Set ABC notation in textarea
-const textarea = document.querySelector('#abc');
-const warnings = document.querySelector("#warnings");
-warnings.style.display = 'none';
-textarea.innerText = \`${abcNotation}\`;
-
-// Create style element for CSS
-const style = document.createElement('style');
-style.textContent = \`
-  body {
-    background: linear-gradient(#ffedfa, #c9a6ec);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3em;
-  }
-
-  .title-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    padding: 0 1em;
-    background: #aa6bea;
-    color: #28282b;
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    z-index: 999999999;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    user-select: none;
-    -webkit-app-region: drag;
-  }
-
-  .title-bar-btn {
-    -webkit-app-region: no-drag;
-    background: #c9a6ec;
-    color: #28282b;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: monospace;
-  }
-
-  .title-bar-btn:hover {
-    background: #ffedfa;
-    color: #28282b;
-  }
-\`;
-
-// Append style element to the head
-document.head.appendChild(style);
-
-// Create and append title bar elements
-const titleBar = document.createElement('div');
-titleBar.classList.add('title-bar');
-
-const title = document.createElement('span');
-title.classList.add('title');
-title.textContent = 'Live Beats';
-
-const subtitle = document.createElement('span');
-subtitle.classList.add('subtitle');
-subtitle.textContent = 'AI Music Generator';
-
-const exitBtn = document.createElement('span');
-exitBtn.classList.add('title-bar-btn', 'exit-btn');
-exitBtn.textContent = 'x';
-
-titleBar.appendChild(title);
-titleBar.appendChild(subtitle);
-titleBar.appendChild(exitBtn);
-
-document.body.insertBefore(titleBar, document.body.firstChild);
-`
-      )
+      .executeJavaScript(getPlayerJS(abcNotation))
       .catch((err) => console.error(err))
   })
 })
@@ -173,7 +95,7 @@ const createWindow = async () => {
       contextIsolation: true,
     },
   })
-  mainWindow.loadFile(path.join(__dirname, "ai.html"))
+  mainWindow.loadFile(path.join(__dirname, "index.html"))
 
   if (!config.music || !config.meta) {
     config.music = await saveMusicList(config)
@@ -188,6 +110,7 @@ ipcMain.handle("quit", () => {
   app.quit()
 })
 
+app.disableHardwareAcceleration()
 app.on("ready", createWindow)
 app.on("window-all-closed", () =>
   process.platform !== "darwin" ? app.quit() : ""
